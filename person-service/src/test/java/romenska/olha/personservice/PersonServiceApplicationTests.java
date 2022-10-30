@@ -1,6 +1,5 @@
 package romenska.olha.personservice;
 
-
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
@@ -16,8 +15,8 @@ import romenska.olha.personservice.controller.PersonController;
 
 @AutoConfigureMockMvc
 @SpringBootTest
-@Sql(value = "/create_persons.sql",executionPhase = Sql.ExecutionPhase.BEFORE_TEST_METHOD)
-@Sql(value = "/delete_persons.sql",executionPhase = Sql.ExecutionPhase.AFTER_TEST_METHOD)
+@Sql(value = {"/create_persons.sql" },executionPhase = Sql.ExecutionPhase.BEFORE_TEST_METHOD)
+@Sql(value = { "/delete_persons.sql"} ,executionPhase = Sql.ExecutionPhase.AFTER_TEST_METHOD)
 
 class PersonServiceApplicationTests {
     @Autowired
